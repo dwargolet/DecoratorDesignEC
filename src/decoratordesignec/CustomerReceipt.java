@@ -23,20 +23,23 @@ public class CustomerReceipt {
         this.crust = crust;
         this.output = output;
         this.topping = topping;
-//         
+        addToppings(topping);   
 //        receiptDate = new Date();
         
     }
-    
-    
-    
-    
-//    public void addToppings(ToppingDecorator topping) {
-//        
-//        
-//        pizza = new topping(crust);
-//        
+
+//    public CustomerReceipt() {
 //    }
+    
+    
+    
+    
+    public void addToppings(ToppingDecorator topping) {
+        
+        
+        pizza = new topping(crust);
+        
+    }
     
     
     
@@ -59,16 +62,8 @@ public class CustomerReceipt {
         
               StringBuilder receiptData = new StringBuilder("*********************************** \n" +
                       
-                      "**   " + topping.getDescription() + " \n**    Total: " + nf.format(topping.cost()));
-                      
-                      
-//         "*     " + garageName + "      *\n*         " + garageAddress  + 
-//         "             *\n*   Receipt for Customer #" + customerNum + "       *\n*    Parked for " 
-//         + parkedCars[i].getHoursParked() + " hours.        *\n" + "*       Total fee: " + 
-//                    nf.format(gm.getGarageCompany().getBs().getTotalFee(parkedCars[i].getHoursParked())) +"          *\n*    " +
-//                      THNK_YOU_MSG + "   *\n*      " + getReceiptDateFormatted() + "        *\n***********************************\n");
-//
-//         
+                      "  " + topping.getDescription() + " \n    Total: " + nf.format(topping.cost()));
+                       
           
        
           output.printReceipt(receiptData.toString()); 

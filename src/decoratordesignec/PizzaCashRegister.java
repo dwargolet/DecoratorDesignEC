@@ -22,9 +22,10 @@ public class PizzaCashRegister {
         receipt = new CustomerReceipt(crust, topping, output);      
     }
     
-//    public final void addToppings(ToppingDecorator topping){     
+    public final void addToppings(ToppingDecorator topping){     
 //      receipt.addToppings(new Sausage(crust));
-//    }
+        receipt = new CustomerReceipt(crust, topping);
+    }
     
      
     
