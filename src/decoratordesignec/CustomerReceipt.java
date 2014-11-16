@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class CustomerReceipt {
     
-    private Crust crust;
+    private Pizza crust;
     private ToppingDecorator topping;
     private CustomerReceiptOutputStrategy output; //instance of the receipt strategy
 //    private static final String THNK_YOU_MSG = "Thank you for stopping by!"; //personal message
@@ -18,26 +18,18 @@ public class CustomerReceipt {
     
     
     
-    public CustomerReceipt(Crust crust, ToppingDecorator topping, CustomerReceiptOutputStrategy output){
+    public CustomerReceipt(Pizza crust, ToppingDecorator topping, CustomerReceiptOutputStrategy output){
         
         this.crust = crust;
         this.output = output;
         this.topping = topping;
-        addToppings(topping);   
-//        receiptDate = new Date();
         
     }
-
-//    public CustomerReceipt() {
-//    }
-    
-    
     
     
     public void addToppings(ToppingDecorator topping) {
-        
-        
-        pizza = new topping(crust);
+
+        topping = this.topping(crust);
         
     }
     
@@ -67,8 +59,6 @@ public class CustomerReceipt {
           
        
           output.printReceipt(receiptData.toString()); 
-//        output.printReceipt(crust.getDescription() + topping.getDescription() + " " + nf.format(crust.cost())); 
-         
          
           }
 

@@ -7,8 +7,7 @@ package decoratordesignec;
 public class PizzaCashRegister {
     
     private CustomerReceipt receipt;
-    private Crust crust;
-    private Crust pizza;
+    private Pizza crust;
     private ToppingDecorator topping;
     private static final String ORDER_ERR_MSG =
             "There was an issue with the Crust, topping. and/or the Output strategy.";
@@ -22,10 +21,10 @@ public class PizzaCashRegister {
         receipt = new CustomerReceipt(crust, topping, output);      
     }
     
-    public final void addToppings(ToppingDecorator topping){     
-//      receipt.addToppings(new Sausage(crust));
-        receipt = new CustomerReceipt(crust, topping);
-    }
+//    public final void addToppings(ToppingDecorator topping){     
+//
+//        receipt.addToppings(new Sausage(crust));
+//    }
     
      
     

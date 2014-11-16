@@ -5,11 +5,11 @@ package decoratordesignec;
  * @author Daniel
  */
 public class NoToppings extends ToppingDecorator{
-    private Crust crust;
+    private Pizza crust;
     private String pizzaDescription = " no toppings";
     
     
-    public NoToppings(Crust crust) {
+    public NoToppings(Pizza crust) {
         this.crust = crust;
     }
          

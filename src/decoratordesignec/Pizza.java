@@ -4,7 +4,7 @@ package decoratordesignec;
  *
  * @author Daniel
  */
-public abstract class Crust {
+public abstract class Pizza {
     
     public String description = "Unknown";
 

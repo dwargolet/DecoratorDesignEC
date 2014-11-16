@@ -6,11 +6,11 @@ package decoratordesignec;
  */
 public class Pepperoni extends ToppingDecorator{
     
-    private Crust crust;
+    private Pizza crust;
     private double pepperoniCost = 0.12;
     private String pizzaDescription = ", pepperoni";
     
-    public Pepperoni(Crust crust) {
+    public Pepperoni(Pizza crust) {
         this.crust = crust;
     }
 

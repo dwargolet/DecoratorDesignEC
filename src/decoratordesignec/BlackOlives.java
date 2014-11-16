@@ -6,12 +6,12 @@ package decoratordesignec;
  */
 public class BlackOlives extends ToppingDecorator{
     
-    private Crust crust;
+    private Pizza crust;
     private double blackOlivesCost = 0.6;
     private String pizzaDescription = ", black olives";
     
     
-    public BlackOlives(Crust crust) {
+    public BlackOlives(Pizza crust) {
         this.crust = crust;
     }
 
