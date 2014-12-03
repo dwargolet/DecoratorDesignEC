@@ -8,7 +8,7 @@ public class Pepperoni extends ToppingDecorator{
     
     private Pizza crust;
     private double pepperoniCost = 0.12;
-    private String pizzaDescription = ", pepperoni";
+    private String description = ", pepperoni";
     
     public Pepperoni(Pizza crust) {
         this.crust = crust;
@@ -27,7 +27,7 @@ public class Pepperoni extends ToppingDecorator{
     @Override
     public String getDescription() {
 
-        return crust.getDescription() + pizzaDescription;
+        return crust.getDescription() + description;
     }
 
     @Override

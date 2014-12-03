@@ -5,26 +5,26 @@ package decoratordesignec;
  * @author Daniel
  */
 public class PizzaCashRegister {
-    
-    private CustomerReceipt receipt;
     private Pizza crust;
+    private CustomerReceipt receipt;
     private ToppingDecorator topping;
     private static final String ORDER_ERR_MSG =
             "There was an issue with the Crust, topping. and/or the Output strategy.";
 
     
     
-    public final void startOrder(ToppingDecorator topping, CustomerReceiptOutputStrategy output){
-        if(output == null || topping == null) {
+    public final void startOrder(Pizza crust, CustomerReceiptOutputStrategy output){
+        if(output == null || crust == null) {
             throw new IllegalArgumentException(ORDER_ERR_MSG);
-        }           
-        receipt = new CustomerReceipt(crust, topping, output);      
+        }     
+        this.crust = crust;
+        receipt = new CustomerReceipt(crust, output);      
     }
     
-//    public final void addToppings(ToppingDecorator topping){     
-//
-//        receipt.addToppings(new Sausage(crust));
-//    }
+    public final void addTopping(Pizza topping){     
+
+        receipt.addToppings(topping);
+    }
     
      
     

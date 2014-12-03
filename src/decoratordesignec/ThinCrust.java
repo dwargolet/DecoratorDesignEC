@@ -12,11 +12,14 @@ package decoratordesignec;
 public class ThinCrust extends Pizza{
 
     private double thinCrustCost = 4.99;
-    private String crustDescription = "Thin Crust with";
+    private String description = "Thin Crust with";
     
+    public String getDescription() {
+        return description;
+    }
     
     public ThinCrust() {
-        description = crustDescription;
+        description = description;
     }
 
     public double getThinCrustCost() {

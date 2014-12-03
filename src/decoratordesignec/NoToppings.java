@@ -6,7 +6,7 @@ package decoratordesignec;
  */
 public class NoToppings extends ToppingDecorator{
     private Pizza crust;
-    private String pizzaDescription = " no toppings";
+    private String description = " no toppings";
     
     
     public NoToppings(Pizza crust) {
@@ -15,7 +15,7 @@ public class NoToppings extends ToppingDecorator{
          
     @Override
     public String getDescription() {
-        return crust.getDescription() + pizzaDescription;
+        return crust.getDescription() +description;
     }
 
     @Override

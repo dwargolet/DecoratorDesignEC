@@ -8,7 +8,7 @@ public class Sausage extends ToppingDecorator{
     
     private Pizza crust;
     private double sausageCost = 0.10;
-    private String pizzaDescription = ", sausage";
+    private String description = ", sausage";
     
     public Sausage(Pizza crust) {
         this.crust = crust;
@@ -26,7 +26,7 @@ public class Sausage extends ToppingDecorator{
     @Override
     public String getDescription() {
 
-        return crust.getDescription() + pizzaDescription;
+        return crust.getDescription() + description;
     }
 
     @Override

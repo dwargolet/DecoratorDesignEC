@@ -8,7 +8,7 @@ public class BlackOlives extends ToppingDecorator{
     
     private Pizza crust;
     private double blackOlivesCost = 0.6;
-    private String pizzaDescription = ", black olives";
+    private String description = ", black olives";
     
     
     public BlackOlives(Pizza crust) {
@@ -27,7 +27,7 @@ public class BlackOlives extends ToppingDecorator{
     @Override
     public String getDescription() {
 
-        return crust.getDescription() + pizzaDescription;
+        return crust.getDescription() + description;
     }
 
     @Override

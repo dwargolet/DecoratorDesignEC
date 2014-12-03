@@ -1,15 +1,16 @@
 package decoratordesignec;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
  * @author Daniel
  */
 public class CustomerReceipt {
-    
-    private Pizza crust;
+    private List<Pizza> pizzaOptions;
     private ToppingDecorator topping;
     private CustomerReceiptOutputStrategy output; //instance of the receipt strategy
 //    private static final String THNK_YOU_MSG = "Thank you for stopping by!"; //personal message
@@ -18,18 +19,16 @@ public class CustomerReceipt {
     
     
     
-    public CustomerReceipt(Pizza crust, ToppingDecorator topping, CustomerReceiptOutputStrategy output){
-        
-        this.crust = crust;
+    public CustomerReceipt(Pizza crust, CustomerReceiptOutputStrategy output){
+        pizzaOptions = new ArrayList<>();
+        pizzaOptions.add(crust);
         this.output = output;
-        this.topping = topping;
-        
     }
     
     
-    public void addToppings(ToppingDecorator topping) {
-
-        topping = this.topping(crust);
+    public void addToppings(Pizza topping) {
+          
+       pizzaOptions.add(topping);
         
     }
     
@@ -51,10 +50,13 @@ public class CustomerReceipt {
     
     public final void printReceipt(){    
         NumberFormat nf = NumberFormat.getCurrencyInstance();
-        
-              StringBuilder receiptData = new StringBuilder("*********************************** \n" +
+            double cost = 0;
+              StringBuilder receiptData = new StringBuilder("** INGREDIENTS*** \n");
+              receiptData.append("\n\nINGREDIENTS: ").append(pizzaOptions.get(pizzaOptions.size()-1).getDescription());
+
+              receiptData.append("\n\nTOTAL COST: ").append(pizzaOptions.get(pizzaOptions.size()-1).cost());
                       
-                      "  " + topping.getDescription() + " \n    Total: " + nf.format(topping.cost()));
+//                      "  " + topping.getDescription() + " \n    Total: " + nf.format(topping.cost()));
                        
           
        
